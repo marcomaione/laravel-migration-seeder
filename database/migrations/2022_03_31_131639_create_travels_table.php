@@ -15,8 +15,18 @@ class CreateTravelsTable extends Migration
     {
         Schema::create('travels', function (Blueprint $table) {
             $table->id();
-            //destinazione,prezzo,data,luogo di partenza,periodo,lunghezza soggiorno,sistemazione,tipo di pernottamento.
+            //,prezzo
+            $table->string('destination', 100);
+            $table->string('departure', 50);
+            $table->string('period', 50);
+            $table->string('stay length', 50);
+            $table->date('departure_date');
+            $table->date('check_in_date');
+            $table->string('accommodation', 100);
+            $table->decimal('price',8,2);
+
             $table->timestamps();
+
         });
     }
 
